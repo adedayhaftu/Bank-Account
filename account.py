@@ -35,7 +35,13 @@ class Account:
         return f"Transferred {amount} to {target_account.name}"
     def get_balance(self):
         return self.balance
+    
+    # def loan_limit(self):
+    #     deposit_history= sum(self.deposit)
+    #     return deposit_history
     def request_loan(self, amount):
+        # if amount>self.loan_limit():
+        #     return f'hhhhhhhhhhhhhhh'
         self.loan += amount
         self.balance += amount
         self.transactions.append(amount)
@@ -55,7 +61,7 @@ class Account:
     def account_statement(self):
         return ",".join(self.transactions)
     def interest_calculation(self):
-        interest = self.balance * 0.05
+        interest = self.balance * 0.05 
         self.balance += interest
         self.transactions.append(f"Interest added: {interest}")
         return f"New balance after interest: {self.balance}"
@@ -75,3 +81,5 @@ class Account:
         self.balance = 0
         self.loan = 0
         return "Account closed. All balances set to zero and transcations cleard."
+
+
