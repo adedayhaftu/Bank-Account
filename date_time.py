@@ -18,13 +18,6 @@ class Account:
         self.__is_frozen = False
         self.__closed_account = False
         self.__min_balance = 50
-    def __init__(self, narration, amount, transaction_type):
-        self.date_time= datetime.now()
-        self.narration= narration
-        self.amount= amount
-        self.transaction_type= transaction_type
-    def __str__(self):
-        return f"Transaction date and time: {self.date_time} | {self.narration}: {self.amount} {self.transaction_type}"
     def account_number(self):
         return self.__account_number
     def get_balance(self):
@@ -143,4 +136,3 @@ class Account:
         return "The account has been closed. All balances and transactions have been cleared."
     def min_balance_message(self):
         return f"The minimum balance is {self.__min_balance}."
-
